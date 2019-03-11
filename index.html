@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Barley break</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/other/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/other/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/other/favicon-16x16.png">
 
-
+    <!--CSS-->
     <link rel="stylesheet" href="assets/plugins/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/plugins/jquery-ui/themes/base/jquery-ui.min.css">
-    <!--    <link rel="stylesheet" href="assets/css/styles.css">-->
+    <!--<link rel="stylesheet" href="assets/plugins/jquery-ui/themes/base/jquery-ui.min.css">-->
 
+
+    <!--SITE ASSETS-->
     <link rel="stylesheet/less" href="assets/css/styles.less">
-    <script src="assets/plugins/less/dist/less.min.js"></script>
+    <!--<link rel="stylesheet" href="assets/css/styles.css">-->
+    <script type="text/babel" src="assets/js/scripts_babel.js"></script>
+    <!--<script src="assets/js/scripts.js"></script>-->
 
-    <script type="text/babel" src="assets/js/scripts.js"></script>
+    <!--SCRIPTS-->
+    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
     <script src="assets/plugins/approvejs/dist/approve.min.js"></script>
-    <script src="assets/plugins/lodash/dist/lodash.min.js"></script>
-    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
-    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
-    <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="assets/plugins/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src="assets/plugins/lodash/dist/lodash.min.js"></script>-->
+    <!--<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>-->
     <script src="assets/plugins/babel/browser.min.js"></script>
+    <script src="assets/plugins/less/dist/less.min.js"></script>
 </head>
 <body>
 
+<button data-click="scroll_down" type="button" class="btn btn-primary">Вниз</button>
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 vh100">
+
+            <div class="game_field">
+            </div>
+
+            <div class="timer">
+                Прошло времени: <b><span data-context="timer">00:00:00</span></b></br>
+                Сделано ходов: <b><span data-context="stroke">0</span></b>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 col-md-6 buttons_field">
+        </div>
+
+    </div>
+</div>
 
 </body>
 </html>

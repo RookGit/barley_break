@@ -1,6 +1,103 @@
-@bg_color_block: #ffffff;
-@bg_color: #044083;
+@bg_color_null_block: #ffbf82;
+@bg_color_block: #ff8720;
+@bg_color_game_field: chocolate;
+@bg_color: #ffcc92;
+@mg_top: 20vh;
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: @bg_color;
+}
+
+button {
+  border: solid 3px rgba(1, 1, 1, 0.6) !important;
+}
+
+[data-click="scroll_down"] {
+  display: none;
+}
+
+.game_field {
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  margin: @mg_top auto auto;
+  border-radius: 5px;
+  background-color: @bg_color_game_field;
+}
+
+.game_block {
+  display: inline-block;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  background-color: @bg_color_block;
+  border: @bg_color_game_field 4px solid;
+  font-size: 30px;
+  line-height: 85px;
+}
+
+.game_null_block {
+  display: inline-block;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  background-color: @bg_color_null_block;
+  border: @bg_color_game_field 4px solid;
+  font-size: 30px;
+  line-height: 85px;
+}
+
+.timer {
+  text-align: center;
+  font-size: 30px;
+}
+
+.buttons_field {
+  padding-top: @mg_top;
+  padding-bottom: @mg_top;
+}
+
+.buttons_field * {
+  font-size: 2em;
+}
+
+.buttons_field .btn {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .game_block, .game_null_block {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border: @bg_color_game_field 2px solid;
+    line-height: 40px;
+  }
+
+  .game_field {
+    width: 200px;
+    height: 200px;
+  }
+
+  .buttons_field {
+    padding: 10px;
+    height: auto;
+  }
+
+  .vh100 {
+    height: 100vh;
+  }
+
+  [data-click="scroll_down"] {
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+  }
 }
