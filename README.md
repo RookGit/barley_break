@@ -1,6 +1,7 @@
+# Пример кода
+
 https://github.com/RookGit/barley_break/blob/master/assets/js/scripts_babel.js - JS
 https://github.com/RookGit/barley_break/blob/master/assets/css/styles.less - LESS
-
 
 # Управление
 
