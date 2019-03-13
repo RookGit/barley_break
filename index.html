@@ -13,32 +13,81 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="assets/plugins/bootstrap/dist/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="assets/plugins/jquery-ui/themes/base/jquery-ui.min.css">-->
+    <!--    <link rel="stylesheet" href="assets/plugins/jquery-ui/themes/base/jquery-ui.min.css">-->
+
 
     <!--SCRIPTS-->
     <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
-    <script src="assets/plugins/approvejs/dist/approve.min.js"></script>
+<!--    <script src="assets/plugins/approvejs/dist/approve.min.js"></script>-->
     <script src="assets/plugins/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--<script src="assets/plugins/lodash/dist/lodash.min.js"></script>-->
-    <!--<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>-->
-    <!--<script src="assets/plugins/babel/browser.min.js"></script>-->
-    <!--<script src="assets/plugins/less/dist/less.min.js"></script>-->
+    <script src="assets/plugins/jquery-touchswipe/jquery.touchSwipe.min.js"></script>
+    <!--    <script src="assets/plugins/lodash/dist/lodash.min.js"></script>-->
+    <!--    <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>-->
 
-
-    <!--SITE ASSETS-->
-    <!--<link rel="stylesheet/less" href="assets/css/styles.less">-->
+    <!--PRODUCTION ASSETS-->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!--<script type="text/babel" src="assets/js/scripts_babel.js"></script>-->
     <script src="assets/js/scripts.js"></script>
+
+    <!--DEBUG ASSETS-->
+    <!--    <link rel="stylesheet/less" href="assets/css/styles.less">-->
+    <!--    <script src="assets/plugins/babel/browser.min.js"></script>-->
+    <!--    <script type="text/babel" src="assets/js/scripts_babel.js"></script>-->
+    <!--    <script src="assets/plugins/less/dist/less.min.js"></script>-->
+
 </head>
 <body>
 
-<button data-click="scroll_down" type="button" class="btn btn-primary">Вниз</button>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal_save_result">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Поздравляем!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Вы выиграли! Заполните данные, чтобы мы сохранили Ваш результат!</p>
+
+                <form data-form="request_result_game" action="" method="post">
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Введите Ваше имя"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Фамилия:</label>
+                        <input name="surname" type="text" class="form-control" id="surname"
+                               placeholder="Введите Ваше фамилию" required>
+                    </div>
+
+                    <div class="error_form">
+
+                    </div>
+
+                    <input type="hidden" name="count_stroke" value="">
+                    <input type="hidden" name="time" value="">
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+                <button type="button" data-click="send_form_result" class="btn btn-light">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="buttons_panel">
+    <button data-click="scroll_down" type="button" class="btn btn-primary">Вниз</button>
+    <button data-click="history" type="button" class="btn btn-primary" style="display: none;">История</button>
+</div>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 col-md-6 vh100">
+        <div data-context="gesture_listener" class="col-sm-12 col-md-6">
 
             <div class="game_field">
             </div>
@@ -51,6 +100,13 @@
         </div>
 
         <div class="col-sm-12 col-md-6 buttons_field">
+        </div>
+
+        <div class="history_stroke" style="display: none;">
+
+        </div>
+
+        <div class="block" style="display: none;">
         </div>
 
     </div>

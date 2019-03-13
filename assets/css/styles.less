@@ -13,12 +13,28 @@ body {
   background-color: @bg_color;
 }
 
-button {
-  border: solid 3px rgba(1, 1, 1, 0.6) !important;
+button:not(.close) {
+  border: solid 2px rgba(1, 1, 1, 0.6) !important;
+}
+
+.modal-content {
+  background-color: orange;
+  border: solid 2px rgba(1, 1, 1, 0.6) !important;
+}
+
+.hide {
+  display: none;
 }
 
 [data-click="scroll_down"] {
   display: none;
+}
+
+.buttons_panel {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
 }
 
 .game_field {
@@ -30,26 +46,22 @@ button {
   background-color: @bg_color_game_field;
 }
 
-.game_block {
+.game_block, .game_null_block {
   display: inline-block;
   border-radius: 5px;
   width: 100px;
   height: 100px;
-  background-color: @bg_color_block;
-  border: @bg_color_game_field 4px solid;
   font-size: 30px;
   line-height: 85px;
+  border: @bg_color_game_field 4px solid;
+}
+
+.game_block {
+  background-color: @bg_color_block;
 }
 
 .game_null_block {
-  display: inline-block;
-  border-radius: 5px;
-  width: 100px;
-  height: 100px;
   background-color: @bg_color_null_block;
-  border: @bg_color_game_field 4px solid;
-  font-size: 30px;
-  line-height: 85px;
 }
 
 .timer {
@@ -70,7 +82,51 @@ button {
   margin-top: 20px;
 }
 
+.btn-group .btn {
+  font-size: 1em;
+}
+
+button:disabled {
+  opacity: 0.1 !important;
+}
+
+.history_stroke {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  height: 100vh;
+  max-height: 100vh;
+  width: 25vw;
+  overflow-y: scroll;
+  background-color: #ff8720;
+}
+
+.block {
+  position: fixed;
+  background-color: black;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+}
+
+.error_form {
+  color: white;
+  font-weight: bold;
+}
+
+.element_history {
+  padding: 10px;
+  height: auto;
+  border-bottom: #954b13 2px dashed;
+}
+
 @media screen and (max-width: 500px) {
+
+  .history_stroke {
+    width: 50vw;
+  }
+
   .game_block, .game_null_block {
     width: 50px;
     height: 50px;
@@ -89,15 +145,20 @@ button {
     height: auto;
   }
 
-  .vh100 {
-    height: 100vh;
+  .buttons_field *{
+    font-size: 1.5em;
   }
+
 
   [data-click="scroll_down"] {
     display: inline-block;
-    position: relative;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
   }
+}
+
+@media screen and (max-width: 756px) {
+
+  .buttons_field *{
+    font-size: 1.5em;
+  }
+
 }
